@@ -1,0 +1,110 @@
+version: 2
+
+sources:
+  - name: staging
+    database: de-project-417908
+    schema: de_project_bq_dataset
+    tables:
+      - name: order_leads
+      - name: invoices
+      - name: sales_team
+
+models:
+  - name: stg_invoices
+    description: |
+      Contains data about the invoices generated for meal orders placed at the Hotel.
+    columns:
+      - name: order_id
+        data_type: string
+        description: "Unique identifier for the order"
+      - name: order_date
+        data_type: date
+        description: "The date the order was placed."
+      - name: meal_id
+        data_type: string
+        description: "The ID of the meal ordered"
+      - name: company_id
+        data_type: string
+        description: "Unique identifier for company associated with the order."
+      - name: meal_date
+        data_type: string
+        description: "Date the meal was served"
+      - name: customers
+        data_type: string
+        description: "Names of customers"
+      - name: meal_price
+        data_type: int64
+        description: "Cost of the meal"
+      - name: meal_type
+        data_type: string
+        description: "Type of meal"
+      - name: order_datetime
+        data_type: datetime
+        description: "Order datetime"
+      - name: meal_datetime
+        data_type: timestamp
+        description: "Meal datetime"
+      - name: order_day_of_week
+        data_type: string
+        description: "Day of the week that the meal was ordered"
+      - name: order_month
+        data_type: string
+        description: "Month that the order was made"
+      - name: order_year
+        data_type: int64
+        description: "Year that the order was made"
+      - name: num_of_customers
+        data_type: int64
+        description: "Number of customers at the meal"
+
+  - name: stg_sales_team
+    description: |
+      Contains information about the sales representatives, their IDs, the companies they are associated with, and the company IDs
+    columns:
+      - name: sales_rep_name
+        data_type: string
+        description: "Name of the sales representative who made the order"
+      - name: sales_rep_id
+        data_type: string
+        description: "Unique sales representative identifier"
+      - name: company_name
+        data_type: string
+        description: "The name of the company associated with the order."
+      - name: company_id
+        data_type: string
+        description: "Unique company identifier"
+
+  - name: stg_order_leads
+    description: |
+      Contains data about orders placed at the Hotel, including company name, date, order value, and whether or not the order was converted into a sale
+    columns:
+      - name: order_id
+        data_type: string
+        description: "Order identifier"
+      - name: order_day_of_week
+        data_type: string
+        description: "Day of the week when the order was made"
+      - name: order_month
+        data_type: string
+        description: "Month when the order was made"
+      - name: order_year
+        data_type: int64
+        description: "Year when the order was made"
+      - name: company_id
+        data_type: string
+        description: "Unique identifier for the company associated with the order"
+      - name: company_name
+        data_type: string
+        description: "Name of the company associated with the order"
+      - name: order_datetime
+        data_type: datetime
+        description: "Datetime when the order was made"
+      - name: order_value
+        data_type: int64
+        description: "Total value of the order"
+      - name: converted
+        data_type: int64
+        description: "Whether or not the order was converted into a sale (1 / 0)"
+      - name: conversion_desc
+        data_type: string
+        description: "Description of whether or not the order was converted into a sale"

@@ -177,3 +177,8 @@ key.json
 keys.json
 *key.json
 /.key*
+
+#dbt
+target/
+dbt_packages/
+logs/
