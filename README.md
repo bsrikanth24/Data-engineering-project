@@ -28,7 +28,7 @@ Data transformations are performed using [dbt](https://www.getdbt.com/). The tra
 
 ### Dashboard
 
-![architecture](./images/architecture.png)
+![architecture](./images/dashboard.png)
 
 
 Finally a dashboard is then created using [Looker Studio](https://lookerstudio.google.com/) to visualize key insights derived from the processed data. The dashboard comprises of tiles that provide a holistic view of consumer actions, habits, and engagement within the supermarket.
