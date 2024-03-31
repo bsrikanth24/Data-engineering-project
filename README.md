@@ -6,6 +6,10 @@ This project aims to analyze ordering, invoicing, and sales processes at a Hotel
 
 The project adopts a *batch* approach and implements cloud-based technologies, data ingestion pipelines, workflow orchestration, data lake, data warehouse, data transformations, and dashboarding.
 
+### Project Architecture
+
+![architecture](./images/architecture.png)
+
 
 ### Cloud
 The project is developed in the cloud using scalable infrastructure provided by [Google Cloud Platform](https://cloud.google.com/). Infrastructure as Code (IaC) tools such as [Terraform](https://www.terraform.io/) are utilized to provision and manage the cloud resources efficiently.
@@ -23,5 +27,9 @@ In this project, [Google Cloud Storage](https://cloud.google.com/storage) is use
 Data transformations are performed using [dbt](https://www.getdbt.com/). The transformation logic is defined and executed seamlessly within the pipeline, ensuring accurate analysis of consumer behavior trends and patterns.
 
 ### Dashboard
+
+![architecture](./images/architecture.png)
+
+
 Finally a dashboard is then created using [Looker Studio](https://lookerstudio.google.com/) to visualize key insights derived from the processed data. The dashboard comprises of tiles that provide a holistic view of consumer actions, habits, and engagement within the supermarket.
 
