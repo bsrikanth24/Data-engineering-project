@@ -32,3 +32,4 @@ with
     )
 select *
 from orders
+where meal_type is not null
