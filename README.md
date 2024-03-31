@@ -28,12 +28,11 @@ Data transformations are performed using [dbt](https://www.getdbt.com/). The tra
 
 ### Dashboard
 
-![architecture](./images/dashboard.png)
-
-
 Finally a dashboard is then created using [Looker Studio](https://lookerstudio.google.com/) to visualize key insights derived from the processed data. The dashboard comprises of tiles that provide some insights into the customer actions, habits, and engagement with the hotel.
 
 Click [here](https://lookerstudio.google.com/u/0/reporting/ad8806a1-19bd-4a80-9770-2701f140cecc/page/L7ouD/edit) to view the live dashboard
+
+![architecture](./images/dashboard.png)
 
 ### How to run the project
 
