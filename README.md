@@ -8,7 +8,7 @@ The project adopts a *batch* approach and implements cloud-based technologies, d
 
 ### Project Architecture
 
-![architecture](./images/architecture.png)
+![architecture](./images/architecture.svg)
 
 
 ### Cloud
@@ -45,7 +45,7 @@ Click [here](https://lookerstudio.google.com/u/0/reporting/ad8806a1-19bd-4a80-97
 
 __infrastructure provisioning with `terraform`__  
 
-1. Clone this repository.   
+1. Clone this repository `git clone https://github.com/skihumba/data-engineering-project.git` and change directory to the `data-engineering-project` folder.
 2. Create a folder named `.keys` in the `1_terraform` folder.
 3. Rename your gcp service account key obtained from the second point on the prerequisites to `key.json` and paste it in the `.keys` folder. (if your gcp service account key is in a different location, you have to specify it's location in the `variables.tf` file)
 4. Open a terminal and `cd` to the `1_terraform` directory and run the following commands to set up the project infratructure i.e: `google cloud storage` bucket and `BigQuerry`: 
@@ -56,12 +56,12 @@ __infrastructure provisioning with `terraform`__
 __orchestration with `Mage`__
 
 1. Change directory to the `de-project` folder that is in the `2_mage` directory.
-2. Create a file named `.env` with the following content: `PROJECT_NAME=de-project` as the name of the project.
-3. Create a folder named `.keys` in the `2_mage` folder.
+2. Create a file named `.env` with the following content: `PROJECT_NAME=de-project` as the name of the mage project.
+3. Create a folder named `.keys` in the `de-project` folder.
 4. Copy your renamed (`key.json`) gcp service account key into the `.keys` folder. 
-5. Run the `docker-compose up` command wile in the `2_mage` folder to startup the mage container.
+5. Run the `docker-compose up` command in the `de-project` folder to startup the mage container.
 6. Open mage by going to `localhost:6789` in your browser.
-6. In Mage, open files and edit the `oi_conf.yml` file and specify the location of the `GOOGLE_APPLICATION_CREDENTIALS` file to be the `.keys` folder created earlier. 
+6. In Mage, go to `Files` and edit the `oi_conf.yml` file. Specify the location of the `GOOGLE_APPLICATION_CREDENTIALS` file to be the `.keys` folder created earlier. 
 7. Run the pipelines `order_leads_source_to_gcs`, `sales_team_sourde_to_gcs` and `invoices_source_to_gcs` to load data from the source to `google cloud storage`
 8. Run the pipelines `order_leads_gcs_to_bq`, `sales_team_gcs_to_bq` and `invoices_gcs_to_bq` to load data from the source to `google cloud storage` to move the data from the datalake (`google cloud storage`) into the datawarehouse (`BigQuerry`)
 
